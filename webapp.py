@@ -10,7 +10,7 @@ def render_main():
 
 @app.route("/Data-For-Majors")
 def render_page1():
-    return render_template('Data-For-Majors.html', firstfact = "", secondfact = "", thirdfact = "", majorsdata = get_major_options())
+    return render_template('page1.html', firstfact = "", secondfact = "", thirdfact = "", majorsdata = get_major_options())
 
 def get_major_options():
     with open('graduates.json') as demographics_data:
