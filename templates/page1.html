@@ -5,13 +5,13 @@
 {% block title %}Major{% endblock %}
 
 {% block content %}
-<p> {{ firstfact }} </p>
-<p> {{ secondfact }} </p>
-<p> {{ thirdfact }} </p>
-<form action="/response">
+<form action="/response" class = "marginL">
   <label for = "county">Choose a Major (2015):</label>
   <select name="county" id="county">
     {{ majorsdata }}
   <input type="submit" value="Get Data">
 </form>
+<p class = "marginL"> {{ firstfact }} </p>
+<p class = "marginL"> {{ secondfact }} </p>
+<p class = "marginL"> {{ thirdfact }} </p>
 {% endblock %}
