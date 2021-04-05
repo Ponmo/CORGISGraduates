@@ -10,7 +10,19 @@ def render_main():
 
 @app.route("/Data-For-Majors")
 def render_page1():
-    return render_template('page1.html')
+    return render_template('Data-For-Majors.html', firstfact = "", secondfact = "", thirdfact = "", majorsdata = get_major_options())
+
+def get_major_options():
+    with open('graduates.json') as demographics_data:
+        majors = json.load(demographics_data)
+    listOfMajors = []
+    options = ""
+    for major in majors:
+        if major["Year"] == 2015:
+            listOfMajors.append(major["Education"]["Major"])
+    for item in listOfMajors:
+        options += Markup("<option value=\"" + item + "\">" + item + "</option>")
+    return options
 
 if __name__=="__main__":
     app.run(debug=True)
