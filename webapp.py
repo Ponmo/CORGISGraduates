@@ -22,14 +22,14 @@ def salaries(selected_major):
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
     mean_salary = 0.0
-    average_salary = 0.0
+    median_salary = 0.0
     standard_deviation = 0.0
     for major in majors:
         if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
             mean_salary = str(major["Salaries"]["Mean"])
-            average_salary = str(major["Salaries"]["Average"])
+            median_salary = str(major["Salaries"]["Median"])
             standard_deviation = str(major["Salaries"]["Standard Deviation"])
-    return "The mean salary for " + selected_major + " is " + mean_salary + ". " + "The average salary is " + average_salary + ". The standard deviation of the salaries data is " + standard_deviation + "."
+    return "The mean salary for " + selected_major + " is " + mean_salary + ". " + "The median salary is " + median_salary + ". The standard deviation of the salaries data is " + standard_deviation + "."
 
 def demographics(selected_major):
     with open('graduates.json') as demographics_data:
