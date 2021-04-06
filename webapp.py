@@ -29,7 +29,7 @@ def salaries(selected_major):
             mean_salary = str(major["Salaries"]["Mean"])
             median_salary = str(major["Salaries"]["Median"])
             standard_deviation = str(major["Salaries"]["Standard Deviation"])
-    return "The mean salary for " + selected_major + " is " + mean_salary + ". " + "The median salary is " + median_salary + ". The standard deviation of the salaries data is " + standard_deviation + "."
+    return "The mean salary for people with degrees in " + selected_major + " is $" + mean_salary + ". " + "The median salary is $" + median_salary + ". The standard deviation of the salaries data is $" + standard_deviation + "."
 
 def demographics(selected_major):
     with open('graduates.json') as demographics_data:
@@ -46,7 +46,7 @@ def demographics(selected_major):
             minorities = str(major["Demographics"]["Ethnicity"]["Minorities"])
             females = str(major["Demographics"]["Gender"]["Females"])
             males = str(major["Demographics"]["Gender"]["Males"])
-    return "There were " + whites + " whites with a degree in this major in 2015, " + asians + " Asians, and " + minorities + " other minorities. There are " + females + " females and " + males + " males."
+    return "In 2015, there were " + whites + " whites with a degree in this major, " + asians + " Asians, and " + minorities + " other minorities. There were " + females + " females and " + males + " males."
 
 def education_type(selected_major):
     with open('graduates.json') as demographics_data:
