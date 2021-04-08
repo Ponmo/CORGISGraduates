@@ -8,52 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
-    <script>
-      window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "dark2",
-	exportFileName: "Doughnut Chart",
-	exportEnabled: true,
-	animationEnabled: true,
-	title:{
-		text: "Monthly Expense"
-	},
-	legend:{
-		cursor: "pointer",
-		itemclick: explodePie
-	},
-	data: [{
-		type: "doughnut",
-		innerRadius: 90,
-		showInLegend: true,
-		toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
-		indexLabel: "{name} - #percent%",
-		dataPoints: [
-			{ y: 6000, name: "Food" },
-			{ y: 120, name: "Insurance" },
-			{ y: 300, name: "Travelling" },
-			{ y: 800, name: "Housing" },
-			{ y: 150, name: "Education" },
-			{ y: 150, name: "Shopping"},
-			{ y: 250, name: "Others" }
-		]
-	}]
-});
-chart.render();
-
-function explodePie (e) {
-	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-	} else {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-	}
-	e.chart.render();
-}
-
-}
-    </script>
-    <script src = "{{ url_for('static', filename='canvas.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>{% block title %}{% endblock %} - Graduates Dataset</title>
   </head>
 
