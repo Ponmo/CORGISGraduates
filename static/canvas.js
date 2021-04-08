@@ -40,4 +40,4 @@ function explodePie (e) {
 	e.chart.render();
 }
 
-};
+}
