@@ -17,6 +17,9 @@ def return_data():
     major_selected = request.args['major']
     return render_template('Data-For-Majors.html', firstfact = salaries(major_selected), secondfact = demographics(major_selected), thirdfact = education_type(major_selected), majorsdata = get_major_options())
 
+@app.route("/g1")
+def render_g1():
+    return render_template('g1.html', majorsdata = get_major_options())
 
 def salaries(selected_major):
     with open('graduates.json') as demographics_data:
