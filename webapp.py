@@ -15,7 +15,7 @@ def render_page1():
 @app.route("/response")
 def return_data():
     major_selected = request.args['major']
-    return render_template('Data-For-Majors.html', major = major_selected, firstfact = salaries(major_selected), secondfact = demographics(major_selected), thirdfact = education_type(major_selected), majorsdata = get_major_options(), graph = Markup('<div id="chartContainer" style="height: 370px; width: 100%;"></div><script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>'))
+    return render_template('Data-For-Majors.html', major = major_selected, firstfact = salaries(major_selected), secondfact = demographics(major_selected), thirdfact = education_type(major_selected), majorsdata = get_major_options(), graphdata = get_graph_data(major_selected), graph = Markup('<div id="chartContainer" style="height: 370px; width: 100%;"></div><script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>'))
 
 def salaries(selected_major):
     with open('graduates.json') as demographics_data:
@@ -64,6 +64,20 @@ def education_type(selected_major):
             professionals = str(major["Education"]["Degrees"]["Professionals"])
     return "Education: There were a total of " + total + " people with a degree in this major in 2015 (see FAQ). There were " + professionals + " people with professional degrees, " + bachelors + " people with a bachelor's degree, " + masters + " people with a master's degree, and " + doctorates + " people with a doctoral degree."     
 
+def get_graph_data(selected_major):
+    with open('graduates.json') as demographics_data:
+        majors = json.load(demographics_data)
+    name = ""
+    level = ""
+    options = ""
+    for major in majors:
+        if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
+            for activity in major["Work Activity"]
+                level = activity
+                name = activity
+                options += Markup("{y: " + 100 + ", name: \"" + name + "\"},"
+    return options[:-1]
+    
 def get_major_options():
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
@@ -78,3 +92,4 @@ def get_major_options():
 
 if __name__=="__main__":
     app.run(debug=True)
+
