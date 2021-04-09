@@ -10,7 +10,7 @@ def render_main():
 
 @app.route("/Data-For-Majors")
 def render_page1():
-    return render_template('Data-For-Majors.html', firstfact = "", secondfact = "", thirdfact = "", majorsdata = get_major_options(), graph = "")
+    return render_template('Data-For-Majors.html', firstfact = "", secondfact = "", thirdfact = "", majorsdata = get_major_options(), graphdata = "", graph = "")
 
 @app.route("/response")
 def return_data():
