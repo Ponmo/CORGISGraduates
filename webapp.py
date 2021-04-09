@@ -72,7 +72,7 @@ def get_graph_data(selected_major):
     options = ""
     for major in majors:
         if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
-            for activity in major["Work Activity"]
+            for activity in major["Work Activity"]:
                 level = activity
                 name = activity
                 options += Markup("{y: " + 100 + ", name: \"" + name + "\"},"
