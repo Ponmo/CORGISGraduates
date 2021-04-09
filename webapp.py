@@ -76,7 +76,8 @@ def get_graph_data(selected_major):
                 level = activity
                 name = activity
                 options += Markup("{y: " + 100 + ", name: \"" + name + "\"},"
-    return options[:-1]
+    options = options[:-1]
+    return options
     
 def get_major_options():
     with open('graduates.json') as demographics_data:
