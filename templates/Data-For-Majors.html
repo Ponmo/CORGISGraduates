@@ -53,7 +53,8 @@ function explodePie (e) {
 {% block title %}Majors{% endblock %}
 
 {% block content %}
-{{ graph }}
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <form action="/response" class = "marginL">
   <label for = "major">Choose a Major (2015):</label>
   <select name="major" id="major">
