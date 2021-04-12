@@ -25,20 +25,20 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
 		indexLabel: "{name} - #percent%",
 		dataPoints: [
-			{ y: 45381, name: "45381" },
-			{ y: 15675, name: "15675" },
-			{ y: 7272, name: "7272" },
-			{ y: 13822, name: "13822" },
-			{ y: 12305, name: "12305" },
-			{ y: 12875, name: "12875" },
-			{ y: 28479, name: "28479" },
-			{ y: 42443, name: "42443" },
-			{ y: 10119, name: "10119" },
-			{ y: 9911, name: "9911" },
-			{ y: 25925, name: "25925" },
-			{ y: 20970, name: "20970" },
-			{ y: 52257, name: "52257" },
-			{ y: 12358, name: "12358" }
+			{ y: 45381, name: "gege" },
+			{ y: 15675, name: "qwd" },
+			{ y: 7272, name: "wef" },
+			{ y: 13822, name: "feef" },
+			{ y: 12305, name: "grg" },
+			{ y: 12875, name: "hth" },
+			{ y: 28479, name: "wqf" },
+			{ y: 42443, name: "wdwd" },
+			{ y: 10119, name: "WI" },
+			{ y: 9911, name: "C" },
+			{ y: 25925, name: "G" },
+			{ y: 20970, name: "F" },
+			{ y: 52257, name: "D" },
+			{ y: 12358, name: "W" }
 		]
 	}]
 });
@@ -60,8 +60,7 @@ function explodePie (e) {
 {% block title %}Majors{% endblock %}
 
 {% block content %}
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+{{ graph }}
 <form action="/response" class = "marginL">
   <label for = "major">Choose a Major (2015):</label>
   <select name="major" id="major">
