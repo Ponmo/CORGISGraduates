@@ -76,7 +76,7 @@ def get_major_options():
         options += Markup("<option value=\"" + item + "\">" + item + "</option>")
     return options
 
-def graph_data():
+def graph_data(selected_major):
     return "Hello"
 
 def graph_data(selected_major):
