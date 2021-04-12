@@ -79,6 +79,9 @@ def get_major_options():
 def graph_data(selected_major):
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
+    name = ""
+    level = ""
+    option = ""
 
 if __name__=="__main__":
     app.run(debug=True)
