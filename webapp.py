@@ -76,6 +76,9 @@ def get_major_options():
         options += Markup("<option value=\"" + item + "\">" + item + "</option>")
     return options
 
+def graph_data():
+    return "Hello"
+
 def graph_data(selected_major):
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
