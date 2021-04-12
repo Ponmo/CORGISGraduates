@@ -88,7 +88,7 @@ def graph_data(selected_major):
                 level = major["Employment"]["Work Activity"][activity]
                 name = major["Employment"]["Work Activity"][activity]
                 option += Markup("{y: " + str(name) + ", name: \"" + str(name) + "\"},")
-    return option
+    return option[:-1]
 
 if __name__=="__main__":
     app.run(debug=True)
