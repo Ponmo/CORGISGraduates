@@ -82,14 +82,12 @@ def graph_data(selected_major):
     name = ""
     level = ""
     option = ""
-    i = 0
     for major in majors:
         if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
-            while i < 14:
-                level = major["Employment"]["Work Activity"][i]
-                name = major["Employment"]["Work Activity"][i]
+            for activity in major["Employment"]["Work Activity"]:
+                level = major["Employment"]["Work Activity"][activity]
+                name = major["Employment"]["Work Activity"][activity]
                 option += Markup("{y: " + 100 + ", name: \"" + name + "\"},")
-                i += 1
     return option
 
 if __name__=="__main__":
