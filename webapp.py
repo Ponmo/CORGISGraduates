@@ -88,7 +88,6 @@ def get_graph_data(selected_major):
                 level = activity
                 name = activity
                 options += Markup("{y: " + 100 + ", name: \"" + name + "\"},"
-    options = options[0:-1]
     return options
 
 if __name__=="__main__":
