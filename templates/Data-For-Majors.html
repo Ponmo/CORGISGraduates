@@ -12,7 +12,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "Work Activity for" + {{ major }}
+		text: "Monthly Expense"
 	},
 	legend:{
 		cursor: "pointer",
@@ -25,20 +25,13 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
 		indexLabel: "{name} - #percent%",
 		dataPoints: [
-			{ y: 45381, name: "gege" },
-			{ y: 15675, name: "qwd" },
-			{ y: 7272, name: "wef" },
-			{ y: 13822, name: "feef" },
-			{ y: 12305, name: "grg" },
-			{ y: 12875, name: "hth" },
-			{ y: 28479, name: "wqf" },
-			{ y: 42443, name: "wdwd" },
-			{ y: 10119, name: "WI" },
-			{ y: 9911, name: "C" },
-			{ y: 25925, name: "G" },
-			{ y: 20970, name: "F" },
-			{ y: 52257, name: "D" },
-			{ y: 12358, name: "W" }
+			{ y: 450, name: "Food" },
+			{ y: 120, name: "Insurance" },
+			{ y: 300, name: "Travelling" },
+			{ y: 800, name: "Housing" },
+			{ y: 150, name: "Education" },
+			{ y: 150, name: "Shopping"},
+			{ y: 250, name: "Others" }
 		]
 	}]
 });
@@ -48,7 +41,7 @@ function explodePie (e) {
 	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
 		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
 	} else {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
 	}
 	e.chart.render();
 }
