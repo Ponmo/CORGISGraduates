@@ -84,6 +84,9 @@ def graph_data(selected_major):
     option = ""
     for major in majors:
         if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
+        for activity in major["Work Activity"]:
+                level = activity
+                name = activity
 
 if __name__=="__main__":
     app.run(debug=True)
