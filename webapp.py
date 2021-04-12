@@ -63,21 +63,6 @@ def education_type(selected_major):
             masters = str(major["Education"]["Degrees"]["Masters"])
             professionals = str(major["Education"]["Degrees"]["Professionals"])
     return "Education: There were a total of " + total + " people with a degree in this major in 2015 (see FAQ). There were " + professionals + " people with professional degrees, " + bachelors + " people with a bachelor's degree, " + masters + " people with a master's degree, and " + doctorates + " people with a doctoral degree."     
-
-def get_graph_data(selected_major):
-    with open('graduates.json') as demographics_data:
-        majors = json.load(demographics_data)
-    name = ""
-    level = ""
-    options = ""
-    for major in majors:
-        if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
-            for activity in major["Work Activity"]:
-                level = activity
-                name = activity
-                options += Markup("{y: " + 100 + ", name: \"" + name + "\"},"
-    options = options[0:-1]
-    return options
     
 def get_major_options():
     with open('graduates.json') as demographics_data:
