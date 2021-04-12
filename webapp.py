@@ -88,19 +88,7 @@ def graph_data(selected_major):
                 level = activity
                 name = activity
                 option += Markup("{y: " + 100 + ", name: \"" + name + "\"},")
-                                 
+        return option
+
 if __name__=="__main__":
     app.run(debug=True)
-
-"""with open('graduates.json') as demographics_data:
-        majors = json.load(demographics_data)
-    name = ""
-    level = ""
-    option = ""
-    for major in majors:
-        if major["Year"] == 2015 and major["Education"]["Major"] == selected_major:
-            for activity in major["Work Activity"]:
-                level = activity
-                name = activity
-                option += Markup("{y: " + 100 + ", name: \"" + name + "\"},"
-    return option"""
