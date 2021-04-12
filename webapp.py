@@ -77,9 +77,6 @@ def get_major_options():
     return options
 
 def graph_data(selected_major):
-    return "Hello"
-
-def graph_data(selected_major):
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
     name = ""
