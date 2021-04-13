@@ -12,7 +12,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "Work Activity for " + {{ major }} + " Majors"
+		text: "Work Activity for {} Majors".format( {{ major }} )
 	},
 	legend:{
 		cursor: "pointer",
