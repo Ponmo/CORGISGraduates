@@ -15,6 +15,7 @@ def render_page1():
 @app.route("/response")
 def return_data():
     major_selected = request.args['major']
+    major_selected.replace("+", " ") 
     return render_template('Data-For-Majors.html', major = major_selected, firstfact = salaries(major_selected), secondfact = demographics(major_selected), thirdfact = education_type(major_selected), majorsdata = get_major_options(), graphdata = graph_data(major_selected), graph = Markup('<div id="chartContainer" style="height: 370px; width: 100%;"></div><script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>'))
 
 def salaries(selected_major):
