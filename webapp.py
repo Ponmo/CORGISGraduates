@@ -98,7 +98,15 @@ def graph_data(selected_major):
 def data_employment():
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
-    return ""
+    employment_data = ""
+    total = 0.0
+    employed_total = 0.0
+    for major in majors:
+        if major["Year"] == 1993:
+            total += major["Demographics"]["Total"]
+            employed_total += major["Employment"]["Status"]["Unemployed"]
+        employment_data = ""
+    return employment_data
 
 if __name__=="__main__":
     app.run(debug=True)
