@@ -14,7 +14,7 @@ def render_page1():
 
 @app.route("/g1")
 def render_graph1():
-    return render_template('g1.html', graphdata = graph_data_stability())
+    return render_template('g1.html', graphemployment = data_employment())
 
 @app.route("/response")
 def return_data():
@@ -95,7 +95,7 @@ def graph_data(selected_major):
                 option += Markup("{ y: " + str(level) + ", name: \"" + str(name) + "\" },")
     return option[:-1]
 
-def graph_data_stability():
+def data_employment():
     with open('graduates.json') as demographics_data:
         majors = json.load(demographics_data)
     return ""
