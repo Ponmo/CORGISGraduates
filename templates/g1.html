@@ -8,26 +8,41 @@ window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
-	theme: "light2",
+	exportEnabled: true,
 	title:{
-		text: "Simple Line Chart"
+		text: "US Unemployement Rate"
 	},
-	data: [{        
-		type: "line",
-      	indexLabelFontSize: 16,
+	axisY:{ 
+		title: "Percentage",
+		interval: .2,
+		suffix: "%",
+		valueFormatString: "#.0"
+	},
+	data: [{
+		type: "stepLine",
+		yValueFormatString: "#0.0\"%\"",
+		xValueFormatString: "MMM YYYY",
+		markerSize: 5,
 		dataPoints: [
-			{ y: 450 },
-			{ y: 414},
-			{ y: 520, indexLabel: "\u2191 highest",markerColor: "red", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "\u2193 lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
+			{ x: new Date(2016, 0), y: 4.9 },
+			{ x: new Date(2016, 1), y: 4.9 },
+			{ x: new Date(2016, 2), y: 5.0 },
+			{ x: new Date(2016, 3), y: 5.0, indexLabel: "Highest", indexLabelFontColor: "#C24642" },
+			{ x: new Date(2016, 4), y: 4.7 },
+			{ x: new Date(2016, 5), y: 4.9 },
+			{ x: new Date(2016, 6), y: 4.9 },
+			{ x: new Date(2016, 7), y: 4.9 },
+			{ x: new Date(2016, 8), y: 4.9 },
+			{ x: new Date(2016, 9), y: 4.8 },
+			{ x: new Date(2016, 10), y: 4.6 },
+			{ x: new Date(2016, 11), y: 4.7 },
+			{ x: new Date(2017, 0), y: 4.8 },
+			{ x: new Date(2017, 1), y: 4.7 },
+			{ x: new Date(2017, 2), y: 4.5 },
+			{ x: new Date(2017, 3), y:4.4 },
+			{ x: new Date(2017, 4), y:4.3 },
+			{ x: new Date(2017, 5), y:4.4 }
+			{{ graphemployment }}
 		]
 	}]
 });
