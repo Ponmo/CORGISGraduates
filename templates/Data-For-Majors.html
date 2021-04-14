@@ -48,13 +48,13 @@ function explodePie (e) {
 
 {% block content %}
 {{ graph }}
+<p class = "marginL"> {{ firstfact }} </p>
+<p class = "marginL"> {{ secondfact }} </p>
+<p class = "marginL"> {{ thirdfact }} </p>
 <form action="/response" class = "marginL">
   <label for = "major">Choose a Major (2015):</label>
   <select name="major" id="major">
     {{ majorsdata }}
   <input type="submit" value="Get Data">
 </form>
-<p class = "marginL"> {{ firstfact }} </p>
-<p class = "marginL"> {{ secondfact }} </p>
-<p class = "marginL"> {{ thirdfact }} </p>
 {% endblock %}
