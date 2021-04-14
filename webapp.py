@@ -12,6 +12,10 @@ def render_main():
 def render_page1():
     return render_template('Data-For-Majors.html', firstfact = "", secondfact = "", thirdfact = "", majorsdata = get_major_options(), graphdata = "", graph = "")
 
+@app.route("/g1")
+def render_graph1():
+    return render_template('g1.html', graphdata = graph_data_stability())
+
 @app.route("/response")
 def return_data():
     major_selected = request.args['major']
@@ -90,6 +94,11 @@ def graph_data(selected_major):
                 name = activity
                 option += Markup("{ y: " + str(level) + ", name: \"" + str(name) + "\" },")
     return option[:-1]
+
+def graph_data_stability():
+    with open('graduates.json') as demographics_data:
+        majors = json.load(demographics_data)
+    return ""
 
 if __name__=="__main__":
     app.run(debug=True)
