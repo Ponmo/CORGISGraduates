@@ -101,12 +101,17 @@ def data_employment():
     employment_data = ""
     total = 0.0
     employed_total = 0.0
-    for major in majors:
-        if major["Year"] == 1993:
-            total += major["Demographics"]["Total"]
-            employed_total += major["Employment"]["Status"]["Unemployed"]
-        employment_data = ""
-    return employment_data
+    dictionary = {1993: "Percent", 1995: "Percent", 1997: "Percent", 1999: "Percent", 2001: "Percent", 2003: "Percent", 2006: "Percent", 2008: "Percent", 2010: "Percent", 2013: "Percent", 2015: "Percent"}
+    
+    for year in dictionary:
+        for major in majors:
+            if major["Year"] == year:
+                total += major["Demographics"]["Total"]
+                employed_total += major["Employment"]["Status"]["Unemployed"]
+        employment_data += Markup("{ x: new Date(" + str(year) + "), y: " + str(employed_total/total) + " },")
+        total = 0.0
+        employed_total = 0.0
+    return employment_data[:-1]
 
 if __name__=="__main__":
     app.run(debug=True)
