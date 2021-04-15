@@ -101,13 +101,16 @@ def data_employment():
     employment_data = ""
     total = 0.0
     employed_total = 0.0
+    percentage = 0.0
     thislist = [1993, 1995, 1997, 1999, 2001, 2003, 2006, 2008, 2010, 2013, 2015]
     for x in thislist:
         for major in majors:
             if major["Year"] == x:
                 total += major["Demographics"]["Total"]
                 employed_total += major["Employment"]["Status"]["Unemployed"]
-        employment_data += Markup("{ x: new Date(" + str(x) + ", 0), y: " + str((employed_total//total)*100) + " },")
+        percentage = (employed_total/total)*100)
+        percentage = round(percentage, 1)
+        employment_data += Markup("{ x: new Date(" + str(x) + ", 0), y: " + str(percentage) + " },")
         total = 0.0
         employed_total = 0.0
     return employment_data[:-1]
