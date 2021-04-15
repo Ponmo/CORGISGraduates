@@ -107,7 +107,7 @@ def data_employment():
             if major["Year"] == x:
                 total += major["Demographics"]["Total"]
                 employed_total += major["Employment"]["Status"]["Unemployed"]
-        employment_data += Markup("{ x: new Date(" + x + "), y: " + (employed_total//total)*100 + " },")
+        employment_data += Markup("{ x: new Date(" + str(x) + "), y: " + str((employed_total//total)*100) + " },")
         total = 0.0
         employed_total = 0.0
     return employment_data[:-1]
